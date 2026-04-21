@@ -19,6 +19,7 @@ export function SupportForm({
       <input type="hidden" name="locale" value={locale} />
       <input type="hidden" name="projectId" value={projectId ?? ""} />
       <input type="hidden" name="redirectTo" value={redirectTo} />
+      <input className="hidden" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" />
       <label className="label">
         {dict.forms.name}
         <input className="input" name="name" required />
@@ -50,6 +51,7 @@ export function SuggestionForm({ locale, projectId, redirectTo }: { locale: Loca
       <input type="hidden" name="locale" value={locale} />
       <input type="hidden" name="projectId" value={projectId ?? ""} />
       <input type="hidden" name="redirectTo" value={redirectTo} />
+      <input className="hidden" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" />
       <label className="label">
         {dict.forms.name} <span className="text-slate-400">({dict.forms.optional})</span>
         <input className="input" name="name" />

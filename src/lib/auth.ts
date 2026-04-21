@@ -8,7 +8,11 @@ const cookieName = "admin_session";
 const maxAgeSeconds = 60 * 60 * 24 * 7;
 
 function secret() {
-  return process.env.SESSION_SECRET ?? "development-session-secret-change-me";
+  const value = process.env.SESSION_SECRET;
+  if (process.env.NODE_ENV === "production" && (!value || value.length < 32 || value === "development-session-secret-change-me")) {
+    throw new Error("SESSION_SECRET must be set to a strong production value.");
+  }
+  return value ?? "development-session-secret-change-me";
 }
 
 function sign(value: string) {
@@ -21,13 +25,17 @@ function encode(payload: object) {
 }
 
 function decode<T>(token: string): T | null {
-  const [body, signature] = token.split(".");
-  if (!body || !signature) return null;
-  const expected = sign(body);
-  const actualBuffer = Buffer.from(signature);
-  const expectedBuffer = Buffer.from(expected);
-  if (actualBuffer.length !== expectedBuffer.length || !timingSafeEqual(actualBuffer, expectedBuffer)) return null;
-  return JSON.parse(Buffer.from(body, "base64url").toString("utf8")) as T;
+  try {
+    const [body, signature] = token.split(".");
+    if (!body || !signature) return null;
+    const expected = sign(body);
+    const actualBuffer = Buffer.from(signature);
+    const expectedBuffer = Buffer.from(expected);
+    if (actualBuffer.length !== expectedBuffer.length || !timingSafeEqual(actualBuffer, expectedBuffer)) return null;
+    return JSON.parse(Buffer.from(body, "base64url").toString("utf8")) as T;
+  } catch {
+    return null;
+  }
 }
 
 export async function verifyAdmin(email: string, password: string) {

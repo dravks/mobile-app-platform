@@ -150,19 +150,25 @@ Yerel uygulama verilerini kaldırmak için cihaz ayarlarından uygulama verileri
 async function main() {
   const adminEmail = process.env.ADMIN_EMAIL ?? "admin@example.com";
   const adminPassword = process.env.ADMIN_PASSWORD ?? "change-me-now";
+  const defaultAdminCredentials = !process.env.ADMIN_EMAIL || !process.env.ADMIN_PASSWORD || adminPassword === "change-me-now";
 
-  await prisma.user.upsert({
-    where: { email: adminEmail },
-    update: {
-      name: "Mobilc Admin",
-      passwordHash: await bcrypt.hash(adminPassword, 12)
-    },
-    create: {
-      email: adminEmail,
-      name: "Mobilc Admin",
-      passwordHash: await bcrypt.hash(adminPassword, 12)
-    }
-  });
+  if (process.env.NODE_ENV === "production" && defaultAdminCredentials) {
+    await prisma.user.deleteMany({ where: { email: "admin@example.com" } });
+    console.warn("Default production admin credentials were not seeded. Set ADMIN_EMAIL and ADMIN_PASSWORD in Vercel.");
+  } else {
+    await prisma.user.upsert({
+      where: { email: adminEmail },
+      update: {
+        name: "Mobilc Admin",
+        passwordHash: await bcrypt.hash(adminPassword, 12)
+      },
+      create: {
+        email: adminEmail,
+        name: "Mobilc Admin",
+        passwordHash: await bcrypt.hash(adminPassword, 12)
+      }
+    });
+  }
 
   await prisma.project.deleteMany({
     where: {
