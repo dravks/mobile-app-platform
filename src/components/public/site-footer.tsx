@@ -14,6 +14,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
         <div className="grid gap-3 text-sm">
           <strong>{dict.nav.projects}</strong>
           <Link href={`/${locale}/projects`}>{dict.nav.projects}</Link>
+          <Link href={`/${locale}/advertise`}>{dict.nav.advertise}</Link>
           <Link href={`/${locale}/support`}>{dict.nav.support}</Link>
           <Link href={`/${locale}/contact`}>{dict.nav.contact}</Link>
         </div>

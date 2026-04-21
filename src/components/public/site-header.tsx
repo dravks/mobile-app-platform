@@ -16,6 +16,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
           <Link href={`/${locale}`}>{dict.nav.home}</Link>
           <Link href={`/${locale}/projects`}>{dict.nav.projects}</Link>
           <Link href={`/${locale}/about`}>{dict.nav.about}</Link>
+          <Link href={`/${locale}/advertise`}>{dict.nav.advertise}</Link>
           <Link href={`/${locale}/support`}>{dict.nav.support}</Link>
           <Link href={`/${locale}/contact`}>{dict.nav.contact}</Link>
         </nav>

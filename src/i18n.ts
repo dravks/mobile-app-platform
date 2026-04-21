@@ -21,6 +21,7 @@ export const dictionaries = {
       about: "Hakkımızda",
       support: "Destek",
       contact: "İletişim",
+      advertise: "Reklam ver",
       admin: "Admin"
     },
     common: {
@@ -86,6 +87,14 @@ export const dictionaries = {
       title: "Genel destek merkezi",
       text: "Hangi uygulamayla ilgili destek istediğinizi seçebilir veya genel iletişim formunu kullanabilirsiniz."
     },
+    advertise: {
+      title: "Mobilc uygulamalarında reklam ve iş birliği",
+      subtitle: "Yayınladığımız mobil uygulamalar içinde uygun, kullanıcı deneyimini bozmayan reklam ve sponsorlu iş birlikleri için bize ulaşabilirsiniz.",
+      intro:
+        "Mobilc, kendi geliştirdiği mobil uygulamaları yayınlayan bağımsız bir app studio’dur. Markalar, ürünler veya kampanyalar için uygulama içi görünürlük, sponsorlu yerleşim ya da özel iş birliği taleplerini değerlendiriyoruz.",
+      rules: ["Sponsorlu alanlar kullanıcıya açıkça belirtilir", "Kullanıcı deneyimini bozan reklam modellerinden kaçınırız", "Gizlilik ve mağaza kurallarına uygun kampanyalarla çalışırız"],
+      contact: "Reklam ve iş birliği talepleri için support@movilc.com adresine konu, hedef ülke, kampanya tarihi ve bütçe aralığı ile yazabilirsiniz."
+    },
     legal: {
       privacyTitle: "Genel gizlilik politikası",
       termsTitle: "Genel kullanım şartları",
@@ -103,6 +112,7 @@ export const dictionaries = {
       about: "About",
       support: "Support",
       contact: "Contact",
+      advertise: "Advertise",
       admin: "Admin"
     },
     common: {
@@ -167,6 +177,14 @@ export const dictionaries = {
     support: {
       title: "General support center",
       text: "Choose the app you need help with or use the general contact form."
+    },
+    advertise: {
+      title: "Advertise and partner with Mobilc apps",
+      subtitle: "Reach out for relevant, user-friendly advertising or sponsored partnership opportunities inside the mobile apps we publish.",
+      intro:
+        "Mobilc is an independent app studio that builds and publishes its own mobile apps. We evaluate in-app visibility, sponsored placements, and custom partnership requests for brands, products, and campaigns.",
+      rules: ["Sponsored placements are clearly disclosed to users", "We avoid ad formats that damage the user experience", "Campaigns must comply with privacy and app store policies"],
+      contact: "For advertising and partnership requests, email support@movilc.com with the campaign topic, target country, timing, and budget range."
     },
     legal: {
       privacyTitle: "General privacy policy",

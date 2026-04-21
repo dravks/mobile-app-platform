@@ -5,7 +5,7 @@ import { absoluteUrl } from "@/lib/content";
 import { prisma } from "@/lib/prisma";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const staticPages = ["", "/projects", "/about", "/contact", "/support", "/privacy", "/terms"];
+  const staticPages = ["", "/projects", "/about", "/advertise", "/contact", "/support", "/privacy", "/terms"];
   const rootShortcutPages = ["/privacy", "/terms", "/support"];
   const projectPages = ["", "/privacy", "/terms", "/support", "/delete-account", "/faq", "/suggestions"];
   const staticEntries = locales.flatMap((locale) =>
