@@ -43,19 +43,19 @@ export const dictionaries = {
     },
     home: {
       eyebrow: "Çok dilli mobil uygulama merkezi",
-      title: "Tüm uygulamalarınızı tek, güvenilir ve ölçeklenebilir platformda yönetin.",
+      title: "Mobil uygulamalarımızı keşfedin, destek ve politika sayfalarına kolayca ulaşın.",
       subtitle:
-        "Projelerinizi tanıtın, destek taleplerini toplayın, Play Store ve App Store için gerekli politika sayfalarını uygulama bazında üretin.",
+        "Geliştirdiğimiz mobil uygulamaları tek bir yerde tanıtıyor; destek, gizlilik, kullanım şartları ve hesap silme sayfalarını uygulama bazında sunuyoruz.",
       cta: "Projeleri görüntüle",
       secondary: "Destek merkezine git",
-      introTitle: "Modern bir app studio vitrini",
+      introTitle: "Uygulamalarımız için modern bir vitrin",
       introText:
-        "Bu platform, çok sayıda mobil uygulamayı tek panelden yönetmek için tasarlandı. Her proje kendi açıklamalarına, ekran görüntülerine, destek akışına ve yasal sayfalarına sahip olabilir.",
-      valuesTitle: "Neden bu yapı?",
-      values: ["TR/EN mimari baştan hazır", "Mağaza uyumluluğu için proje bazlı linkler", "Admin panelde hızlı içerik yönetimi"],
+        "Bu platform, yayınladığımız mobil uygulamaları düzenli ve güvenilir biçimde tanıtmak için tasarlandı. Her uygulamanın kendi açıklamaları, ekran görüntüleri, destek akışı ve yasal sayfaları bulunur.",
+      valuesTitle: "Neden tek merkez?",
+      values: ["Türkçe ve İngilizce içerik", "Uygulama bazlı destek ve politika linkleri", "Play Store ve App Store için düzenli bilgi sayfaları"],
       trustTitle: "Destek ve güven odaklı",
       trustText: "Kullanıcılar doğru uygulama için destek talebi veya öneri gönderebilir; admin paneli tüm girişleri merkezi olarak gösterir.",
-      finalCta: "Bir sonraki uygulamanız için altyapı hazır."
+      finalCta: "Yeni uygulamalarımız burada yayınlanmaya devam edecek."
     },
     projects: {
       title: "Uygulama projeleri",
@@ -125,19 +125,19 @@ export const dictionaries = {
     },
     home: {
       eyebrow: "Multilingual mobile app hub",
-      title: "Manage every app in one trusted, scalable platform.",
+      title: "Explore our mobile apps and access support and policy pages with ease.",
       subtitle:
-        "Present projects, collect support requests, and generate project-specific policy pages required by Google Play and the App Store.",
+        "We present the mobile apps we build in one place, with app-specific support, privacy, terms, and account deletion pages.",
       cta: "View projects",
       secondary: "Go to support",
-      introTitle: "A modern app studio showcase",
+      introTitle: "A modern showcase for our apps",
       introText:
-        "This platform is designed to manage many mobile apps from one panel. Each project can have its own descriptions, screenshots, support flow, and legal pages.",
-      valuesTitle: "Why this structure?",
-      values: ["TR/EN architecture from day one", "Project-specific store compliance links", "Fast content management in the admin panel"],
+        "This platform is designed to present our published mobile apps in a clear and trustworthy way. Each app has its own descriptions, screenshots, support flow, and legal pages.",
+      valuesTitle: "Why one hub?",
+      values: ["Turkish and English content", "App-specific support and policy links", "Organized pages for Google Play and the App Store"],
       trustTitle: "Built around trust and support",
       trustText: "Users can submit support requests or suggestions for the right app, while the admin panel centralizes every incoming item.",
-      finalCta: "The foundation is ready for your next app."
+      finalCta: "New apps from our studio will continue to appear here."
     },
     projects: {
       title: "App projects",
