@@ -21,7 +21,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <section className="container grid items-center gap-10 py-16 lg:grid-cols-[1fr_0.9fr] lg:py-20">
         <div>
           <div className="badge mb-5">{dict.home.eyebrow}</div>
-          <h1 className="max-w-4xl text-5xl font-black leading-[1.02] tracking-normal md:text-7xl">{dict.home.title}</h1>
+          <h1 className="max-w-4xl text-4xl font-black leading-[1.04] tracking-normal sm:text-5xl md:text-7xl">{dict.home.title}</h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">{dict.home.subtitle}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link className="btn btn-primary" href={`/${locale}/projects`}>

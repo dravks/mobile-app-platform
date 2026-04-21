@@ -44,9 +44,9 @@ export const dictionaries = {
     },
     home: {
       eyebrow: "Mobilc uygulama vitrini",
-      title: "Kendi mobil uygulamalarımızı yayınlıyor, destek ve politika sayfalarını tek merkezde sunuyoruz.",
+      title: "Mobilc uygulamaları için resmi merkez.",
       subtitle:
-        "Mobilc; mistik deneyimler, yaratıcı araçlar ve kullanıcı odaklı mobil ürünler geliştiren bağımsız bir app studio’dur. Her uygulama için tanıtım, destek, gizlilik ve mağaza uyumluluk bağlantılarını burada topluyoruz.",
+        "Yayınladığımız mobil ürünleri, destek kanallarını ve mağaza uyumluluk sayfalarını tek, güvenilir ve güncel bir yerde topluyoruz.",
       cta: "Uygulamaları keşfet",
       secondary: "Fall in Mina sayfası",
       introTitle: "Ürünlerimizi mağaza standartlarına hazır sunuyoruz",
@@ -135,9 +135,9 @@ export const dictionaries = {
     },
     home: {
       eyebrow: "Mobilc app showcase",
-      title: "We publish our own mobile apps and keep support and policy pages in one official hub.",
+      title: "The official home for Mobilc apps.",
       subtitle:
-        "Mobilc is an independent app studio building user-focused mobile products, from mystical experiences to creative utilities. This site brings our app pages, support, privacy, and store compliance links together.",
+        "We bring our published mobile products, support channels, and store compliance pages together in one reliable and up-to-date place.",
       cta: "Explore apps",
       secondary: "View Fall in Mina",
       introTitle: "Our products are presented with store-ready clarity",
