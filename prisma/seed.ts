@@ -236,39 +236,36 @@ async function main() {
     }
   });
 
-  await prisma.projectImage.deleteMany({ where: { projectId: project.id } });
-  await prisma.projectImage.createMany({
-    data: [
-      {
-        projectId: project.id,
-        url: "/apps/fall-in-mina/maya.png",
-        altTr: "Fall in Mina Mina ritüel görseli",
-        altEn: "Fall in Mina Mina ritual artwork",
-        sortOrder: 1
-      },
-      {
-        projectId: project.id,
-        url: "/apps/fall-in-mina/tarot-moon.png",
-        altTr: "Fall in Mina tarot ay kartı",
-        altEn: "Fall in Mina tarot moon card",
-        sortOrder: 2
-      },
-      {
-        projectId: project.id,
-        url: "/apps/fall-in-mina/tarot-sun.png",
-        altTr: "Fall in Mina tarot güneş kartı",
-        altEn: "Fall in Mina tarot sun card",
-        sortOrder: 3
-      },
-      {
-        projectId: project.id,
-        url: "/apps/fall-in-mina/playstore.png",
-        altTr: "Fall in Mina mağaza görseli",
-        altEn: "Fall in Mina store artwork",
-        sortOrder: 4
+  await prisma.projectImage.deleteMany({
+    where: {
+      projectId: project.id,
+      url: {
+        in: ["/apps/fall-in-mina/tarot-moon.png", "/apps/fall-in-mina/tarot-sun.png"]
       }
-    ]
+    }
   });
+
+  const imageCount = await prisma.projectImage.count({ where: { projectId: project.id } });
+  if (imageCount === 0) {
+    await prisma.projectImage.createMany({
+      data: [
+        {
+          projectId: project.id,
+          url: "/apps/fall-in-mina/maya.png",
+          altTr: "Fall in Mina Mina ritüel görseli",
+          altEn: "Fall in Mina Mina ritual artwork",
+          sortOrder: 1
+        },
+        {
+          projectId: project.id,
+          url: "/apps/fall-in-mina/playstore.png",
+          altTr: "Fall in Mina mağaza görseli",
+          altEn: "Fall in Mina store artwork",
+          sortOrder: 2
+        }
+      ]
+    });
+  }
 
   await prisma.projectFaq.deleteMany({ where: { projectId: project.id } });
   await prisma.projectFaq.createMany({

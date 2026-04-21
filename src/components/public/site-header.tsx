@@ -27,9 +27,6 @@ export function SiteHeader({ locale }: { locale: Locale }) {
           <Link href={`/${switchLocale}`} className="btn btn-secondary min-h-9 px-3 text-sm uppercase">
             {switchLocale}
           </Link>
-          <Link href="/admin" className="btn btn-primary min-h-9 px-3 text-sm">
-            {dict.nav.admin}
-          </Link>
         </div>
       </div>
     </header>

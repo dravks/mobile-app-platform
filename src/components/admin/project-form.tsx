@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import type { Project, ProjectFaq, ProjectImage } from "@prisma/client";
 import { createProjectAction, deleteProjectAction, updateProjectAction } from "@/app/admin/actions";
 
@@ -108,7 +109,22 @@ export function ProjectForm({ project }: { project?: ProjectWithRelations }) {
           <Text name="supportEmail" label="Support email" value={item.supportEmail ?? ""} />
         </div>
         <div className="mt-4">
-          <TextArea name="galleryUrls" label="Gallery URLs, one per line" value={galleryUrls} rows={5} />
+          <TextArea name="galleryUrls" label="Gallery image URLs, one per line" value={galleryUrls} rows={6} />
+          <p className="mt-2 text-sm leading-6 text-slate-500">
+            Add, reorder, or remove gallery images by editing these lines. You can use local public paths such as /apps/fall-in-mina/maya.png or full image URLs.
+          </p>
+          {project?.images.length ? (
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {project.images.map((image) => (
+                <div key={image.id} className="overflow-hidden rounded-lg border border-slate-200 bg-white">
+                  <div className="relative h-32 w-full">
+                    <Image src={image.url} alt={image.altEn} fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover" />
+                  </div>
+                  <div className="break-all p-3 text-xs font-bold text-slate-500">{image.url}</div>
+                </div>
+              ))}
+            </div>
+          ) : null}
         </div>
       </Section>
 
