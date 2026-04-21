@@ -8,7 +8,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
     <footer className="mt-20 border-t border-slate-200 bg-white">
       <div className="container grid gap-8 py-10 md:grid-cols-[1.3fr_1fr_1fr]">
         <div>
-          <div className="mb-3 text-lg font-black">App Studio</div>
+          <div className="mb-3 text-lg font-black">Mobilc</div>
           <p className="max-w-md text-sm leading-6 text-slate-600">{dict.meta.description}</p>
         </div>
         <div className="grid gap-3 text-sm">

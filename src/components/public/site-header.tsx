@@ -9,8 +9,8 @@ export function SiteHeader({ locale }: { locale: Locale }) {
     <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/86 backdrop-blur">
       <div className="container flex min-h-16 items-center justify-between gap-4">
         <Link href={`/${locale}`} className="flex items-center gap-3 font-black">
-          <span className="grid size-9 place-items-center rounded-lg bg-slate-950 text-white">A</span>
-          <span>App Studio</span>
+          <span className="grid size-9 place-items-center rounded-lg bg-slate-950 text-white">M</span>
+          <span>Mobilc</span>
         </Link>
         <nav className="hidden items-center gap-6 text-sm font-bold text-slate-600 md:flex">
           <Link href={`/${locale}`}>{dict.nav.home}</Link>

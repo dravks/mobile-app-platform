@@ -12,12 +12,12 @@ export function otherLocale(locale: Locale) {
 export const dictionaries = {
   tr: {
     meta: {
-      title: "App Studio Platformu",
-      description: "Mobil uygulamalar için çok dilli proje, destek ve politika yönetim platformu."
+      title: "Mobilc",
+      description: "Mobilc tarafından geliştirilen mobil uygulamalar, destek ve politika sayfaları."
     },
     nav: {
       home: "Ana sayfa",
-      projects: "Projeler",
+      projects: "Uygulamalar",
       about: "Hakkımızda",
       support: "Destek",
       contact: "İletişim",
@@ -42,25 +42,25 @@ export const dictionaries = {
       policyLinks: "Politika bağlantıları"
     },
     home: {
-      eyebrow: "Çok dilli mobil uygulama merkezi",
-      title: "Mobil uygulamalarımızı keşfedin, destek ve politika sayfalarına kolayca ulaşın.",
+      eyebrow: "Mobilc uygulama vitrini",
+      title: "Kendi mobil uygulamalarımızı yayınlıyor, destek ve politika sayfalarını tek merkezde sunuyoruz.",
       subtitle:
-        "Geliştirdiğimiz mobil uygulamaları tek bir yerde tanıtıyor; destek, gizlilik, kullanım şartları ve hesap silme sayfalarını uygulama bazında sunuyoruz.",
-      cta: "Projeleri görüntüle",
-      secondary: "Destek merkezine git",
-      introTitle: "Uygulamalarımız için modern bir vitrin",
+        "Mobilc; mistik deneyimler, yaratıcı araçlar ve kullanıcı odaklı mobil ürünler geliştiren bağımsız bir app studio’dur. Her uygulama için tanıtım, destek, gizlilik ve mağaza uyumluluk bağlantılarını burada topluyoruz.",
+      cta: "Uygulamaları keşfet",
+      secondary: "Fall in Mina sayfası",
+      introTitle: "Ürünlerimizi mağaza standartlarına hazır sunuyoruz",
       introText:
-        "Bu platform, yayınladığımız mobil uygulamaları düzenli ve güvenilir biçimde tanıtmak için tasarlandı. Her uygulamanın kendi açıklamaları, ekran görüntüleri, destek akışı ve yasal sayfaları bulunur.",
-      valuesTitle: "Neden tek merkez?",
-      values: ["Türkçe ve İngilizce içerik", "Uygulama bazlı destek ve politika linkleri", "Play Store ve App Store için düzenli bilgi sayfaları"],
-      trustTitle: "Destek ve güven odaklı",
-      trustText: "Kullanıcılar doğru uygulama için destek talebi veya öneri gönderebilir; admin paneli tüm girişleri merkezi olarak gösterir.",
-      finalCta: "Yeni uygulamalarımız burada yayınlanmaya devam edecek."
+        "Bu site bir ajans sayfası değil; Mobilc’in kendi yayınladığı uygulamalar için resmi ürün vitrini ve destek merkezidir. Kullanıcılar her uygulamanın açıklamasına, ekran görsellerine, destek formuna ve Play Store/App Store için gerekli yasal bağlantılarına ulaşabilir.",
+      valuesTitle: "Mobilc yaklaşımı",
+      values: ["Kendi mobil ürünlerimizi geliştiriyoruz", "Her uygulama için ayrı destek ve politika sayfaları", "Türkçe ve İngilizce mağaza uyumluluğu"],
+      trustTitle: "Uygulama bazlı güven merkezi",
+      trustText: "Gizlilik politikası, kullanım şartları, destek ve hesap silme sayfaları her uygulama için ayrı tutulur. Böylece mağaza linkleri net, kullanıcı desteği düzenli ve ürün bilgileri güncel kalır.",
+      finalCta: "Yeni Mobilc uygulamaları bu merkezde yayınlanmaya devam edecek."
     },
     projects: {
-      title: "Uygulama projeleri",
-      subtitle: "Yayındaki mobil uygulamaları, destek sayfalarını ve mağaza uyumluluk bağlantılarını keşfedin.",
-      empty: "Henüz yayınlanan proje yok."
+      title: "Mobilc uygulamaları",
+      subtitle: "Yayındaki mobil ürünlerimizi, destek sayfalarını ve mağaza uyumluluk bağlantılarını keşfedin.",
+      empty: "Henüz yayınlanan uygulama yok."
     },
     project: {
       features: "Öne çıkanlar",
@@ -94,12 +94,12 @@ export const dictionaries = {
   },
   en: {
     meta: {
-      title: "App Studio Platform",
-      description: "A multilingual project, support, and policy platform for mobile apps."
+      title: "Mobilc",
+      description: "Mobile apps, support, and policy pages developed and published by Mobilc."
     },
     nav: {
       home: "Home",
-      projects: "Projects",
+      projects: "Apps",
       about: "About",
       support: "Support",
       contact: "Contact",
@@ -124,25 +124,25 @@ export const dictionaries = {
       policyLinks: "Policy links"
     },
     home: {
-      eyebrow: "Multilingual mobile app hub",
-      title: "Explore our mobile apps and access support and policy pages with ease.",
+      eyebrow: "Mobilc app showcase",
+      title: "We publish our own mobile apps and keep support and policy pages in one official hub.",
       subtitle:
-        "We present the mobile apps we build in one place, with app-specific support, privacy, terms, and account deletion pages.",
-      cta: "View projects",
-      secondary: "Go to support",
-      introTitle: "A modern showcase for our apps",
+        "Mobilc is an independent app studio building user-focused mobile products, from mystical experiences to creative utilities. This site brings our app pages, support, privacy, and store compliance links together.",
+      cta: "Explore apps",
+      secondary: "View Fall in Mina",
+      introTitle: "Our products are presented with store-ready clarity",
       introText:
-        "This platform is designed to present our published mobile apps in a clear and trustworthy way. Each app has its own descriptions, screenshots, support flow, and legal pages.",
-      valuesTitle: "Why one hub?",
-      values: ["Turkish and English content", "App-specific support and policy links", "Organized pages for Google Play and the App Store"],
-      trustTitle: "Built around trust and support",
-      trustText: "Users can submit support requests or suggestions for the right app, while the admin panel centralizes every incoming item.",
-      finalCta: "New apps from our studio will continue to appear here."
+        "This is not an agency page. It is the official product showcase and support hub for apps published by Mobilc. Users can access descriptions, visuals, support forms, and legal links required by Google Play and the App Store.",
+      valuesTitle: "How Mobilc works",
+      values: ["We build and publish our own mobile products", "Each app has dedicated support and policy pages", "Turkish and English store compliance from day one"],
+      trustTitle: "An app-specific trust hub",
+      trustText: "Privacy policies, terms, support, and account deletion pages are kept separate for each app, so store links are clear and user support stays organized.",
+      finalCta: "New Mobilc apps will continue to be published in this hub."
     },
     projects: {
-      title: "App projects",
-      subtitle: "Explore published mobile apps, support pages, and store compliance links.",
-      empty: "No published projects yet."
+      title: "Mobilc apps",
+      subtitle: "Explore our published mobile products, support pages, and store compliance links.",
+      empty: "No published apps yet."
     },
     project: {
       features: "Highlights",
