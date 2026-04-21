@@ -6,6 +6,7 @@ import { prisma } from "@/lib/prisma";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPages = ["", "/projects", "/about", "/contact", "/support", "/privacy", "/terms"];
+  const rootShortcutPages = ["/privacy", "/terms", "/support"];
   const projectPages = ["", "/privacy", "/terms", "/support", "/delete-account", "/faq", "/suggestions"];
   const staticEntries = locales.flatMap((locale) =>
     staticPages.map((path) => ({
@@ -21,6 +22,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const projects = await prisma.project.findMany({ where: { status: ProjectStatus.PUBLISHED }, select: { slug: true, updatedAt: true } });
 
   return [
+    ...rootShortcutPages.map((path) => ({
+      url: absoluteUrl(path),
+      lastModified: new Date()
+    })),
     ...staticEntries,
     ...locales.flatMap((locale) =>
       projects.flatMap((project) =>
