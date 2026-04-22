@@ -190,7 +190,7 @@ async function main() {
       fullDescriptionEn:
         "Fall in Mina turns fortune reading into a richer, more cinematic ritual. Upload photos of your cup and saucer, let Mina interpret the hidden signs, open a three-card tarot spread, explore palm reading and dream meanings, and return each day for a fresh daily card.",
       logoUrl: "/apps/fall-in-mina/icon.png",
-      coverImageUrl: "/apps/fall-in-mina/maya.png",
+      coverImageUrl: "/apps/fall-in-mina/home.png",
       category: "Lifestyle",
       status: ProjectStatus.PUBLISHED,
       featured: true,
@@ -223,7 +223,7 @@ async function main() {
       fullDescriptionEn:
         "Fall in Mina turns fortune reading into a richer, more cinematic ritual. Upload photos of your cup and saucer, let Mina interpret the hidden signs, open a three-card tarot spread, explore palm reading and dream meanings, and return each day for a fresh daily card.",
       logoUrl: "/apps/fall-in-mina/icon.png",
-      coverImageUrl: "/apps/fall-in-mina/maya.png",
+      coverImageUrl: "/apps/fall-in-mina/home.png",
       category: "Lifestyle",
       status: ProjectStatus.PUBLISHED,
       featured: true,
@@ -246,7 +246,12 @@ async function main() {
     where: {
       projectId: project.id,
       url: {
-        in: ["/apps/fall-in-mina/tarot-moon.png", "/apps/fall-in-mina/tarot-sun.png"]
+        in: [
+          "/apps/fall-in-mina/tarot-moon.png",
+          "/apps/fall-in-mina/tarot-sun.png",
+          "/apps/fall-in-mina/maya.png",
+          "/apps/fall-in-mina/playstore.png"
+        ]
       }
     }
   });
@@ -257,17 +262,38 @@ async function main() {
       data: [
         {
           projectId: project.id,
-          url: "/apps/fall-in-mina/maya.png",
+          url: "/apps/fall-in-mina/splash.png",
           altTr: "Fall in Mina Mina ritüel görseli",
           altEn: "Fall in Mina Mina ritual artwork",
           sortOrder: 1
         },
         {
           projectId: project.id,
-          url: "/apps/fall-in-mina/playstore.png",
+          url: "/apps/fall-in-mina/home.png",
           altTr: "Fall in Mina mağaza görseli",
           altEn: "Fall in Mina store artwork",
           sortOrder: 2
+        },
+        {
+          projectId: project.id,
+          url: "/apps/fall-in-mina/tarot-selection.png",
+          altTr: "Fall in Mina tarot kart secimi",
+          altEn: "Fall in Mina tarot card selection",
+          sortOrder: 3
+        },
+        {
+          projectId: project.id,
+          url: "/apps/fall-in-mina/reading.png",
+          altTr: "Fall in Mina yorum ekrani",
+          altEn: "Fall in Mina reading screen",
+          sortOrder: 4
+        },
+        {
+          projectId: project.id,
+          url: "/apps/fall-in-mina/archive.png",
+          altTr: "Fall in Mina arsiv ekrani",
+          altEn: "Fall in Mina archive screen",
+          sortOrder: 5
         }
       ]
     });
@@ -315,7 +341,7 @@ async function main() {
       fullDescriptionEn:
         "Photo Puzzle Studio lets players create calm, polished jigsaw puzzles from their own photos or curated inspiration images. It supports adjustable puzzle setups, saved progress, local preferences, sound effects, and premium features for a refined mobile puzzle experience.",
       logoUrl: "/apps/photo-puzzle-studio/icon.png",
-      coverImageUrl: "/apps/photo-puzzle-studio/gameplay.png",
+      coverImageUrl: "/apps/photo-puzzle-studio/home.png",
       category: "Game",
       status: ProjectStatus.PUBLISHED,
       featured: true,
@@ -432,7 +458,7 @@ For support, contact support@movilc.com.`,
       fullDescriptionEn:
         "Photo Puzzle Studio lets players create calm, polished jigsaw puzzles from their own photos or curated inspiration images. It supports adjustable puzzle setups, saved progress, local preferences, sound effects, and premium features for a refined mobile puzzle experience.",
       logoUrl: "/apps/photo-puzzle-studio/icon.png",
-      coverImageUrl: "/apps/photo-puzzle-studio/gameplay.png",
+      coverImageUrl: "/apps/photo-puzzle-studio/home.png",
       category: "Game",
       status: ProjectStatus.PUBLISHED,
       featured: true,
@@ -457,14 +483,27 @@ For support, contact support@movilc.com.`,
     }
   });
 
+  await prisma.projectImage.deleteMany({
+    where: {
+      projectId: photoPuzzle.id,
+      url: {
+        in: [
+          "/apps/photo-puzzle-studio/gameplay.png",
+          "/apps/photo-puzzle-studio/create-puzzle.png",
+          "/apps/photo-puzzle-studio/explore.png",
+          "/apps/photo-puzzle-studio/library.png"
+        ]
+      }
+    }
+  });
+
   const photoPuzzleImageCount = await prisma.projectImage.count({ where: { projectId: photoPuzzle.id } });
   if (photoPuzzleImageCount === 0) {
     await prisma.projectImage.createMany({
       data: [
-        { projectId: photoPuzzle.id, url: "/apps/photo-puzzle-studio/gameplay.png", altTr: "Fotoğraf Bulmaca Stüdyosu oynanış ekranı", altEn: "Photo Puzzle Studio gameplay screen", sortOrder: 1 },
-        { projectId: photoPuzzle.id, url: "/apps/photo-puzzle-studio/create-puzzle.png", altTr: "Fotoğraf Bulmaca Stüdyosu yapboz oluşturma ekranı", altEn: "Photo Puzzle Studio create puzzle screen", sortOrder: 2 },
-        { projectId: photoPuzzle.id, url: "/apps/photo-puzzle-studio/explore.png", altTr: "Fotoğraf Bulmaca Stüdyosu ilham görselleri ekranı", altEn: "Photo Puzzle Studio inspiration screen", sortOrder: 3 },
-        { projectId: photoPuzzle.id, url: "/apps/photo-puzzle-studio/library.png", altTr: "Fotoğraf Bulmaca Stüdyosu kütüphane ekranı", altEn: "Photo Puzzle Studio library screen", sortOrder: 4 }
+        { projectId: photoPuzzle.id, url: "/apps/photo-puzzle-studio/home.png", altTr: "Fotoğraf Bulmaca Stüdyosu ana ekranı", altEn: "Photo Puzzle Studio home screen", sortOrder: 1 },
+        { projectId: photoPuzzle.id, url: "/apps/photo-puzzle-studio/explore-real.png", altTr: "Fotoğraf Bulmaca Stüdyosu keşfet ekranı", altEn: "Photo Puzzle Studio explore screen", sortOrder: 2 },
+        { projectId: photoPuzzle.id, url: "/apps/photo-puzzle-studio/new-puzzle.png", altTr: "Fotoğraf Bulmaca Stüdyosu yeni yapboz ekranı", altEn: "Photo Puzzle Studio new puzzle screen", sortOrder: 3 }
       ]
     });
   }
@@ -503,7 +542,7 @@ For support, contact support@movilc.com.`,
       fullDescriptionEn:
         "Price Detective combines barcode scanning, OCR, receipt parsing, shopping lists, and spending tracking. Its matching logic is optimized for Turkish grocery workflows and helps users spot differences between shelf prices and receipt prices while organizing shopping records and budgets.",
       logoUrl: "/apps/price-detective/icon.png",
-      coverImageUrl: "/apps/price-detective/cover.svg",
+      coverImageUrl: "/apps/price-detective/dashboard.png",
       category: "Shopping",
       status: ProjectStatus.PUBLISHED,
       featured: true,
@@ -624,7 +663,7 @@ For support, contact support@movilc.com.`,
       fullDescriptionEn:
         "Price Detective combines barcode scanning, OCR, receipt parsing, shopping lists, and spending tracking. Its matching logic is optimized for Turkish grocery workflows and helps users spot differences between shelf prices and receipt prices while organizing shopping records and budgets.",
       logoUrl: "/apps/price-detective/icon.png",
-      coverImageUrl: "/apps/price-detective/cover.svg",
+      coverImageUrl: "/apps/price-detective/dashboard.png",
       category: "Shopping",
       status: ProjectStatus.PUBLISHED,
       featured: true,
@@ -649,12 +688,23 @@ For support, contact support@movilc.com.`,
     }
   });
 
+  await prisma.projectImage.deleteMany({
+    where: {
+      projectId: priceDetective.id,
+      url: {
+        in: ["/apps/price-detective/cover.svg", "/apps/price-detective/icon.png"]
+      }
+    }
+  });
+
   const priceDetectiveImageCount = await prisma.projectImage.count({ where: { projectId: priceDetective.id } });
   if (priceDetectiveImageCount === 0) {
     await prisma.projectImage.createMany({
       data: [
-        { projectId: priceDetective.id, url: "/apps/price-detective/cover.svg", altTr: "Fiyat Dedektifi fiyat karşılaştırma görseli", altEn: "Price Detective price comparison visual", sortOrder: 1 },
-        { projectId: priceDetective.id, url: "/apps/price-detective/icon.png", altTr: "Fiyat Dedektifi uygulama ikonu", altEn: "Price Detective app icon", sortOrder: 2 }
+        { projectId: priceDetective.id, url: "/apps/price-detective/dashboard.png", altTr: "Fiyat Dedektifi ana ekranı", altEn: "Price Detective dashboard screen", sortOrder: 1 },
+        { projectId: priceDetective.id, url: "/apps/price-detective/product-collection.png", altTr: "Fiyat Dedektifi ürün toplama ekranı", altEn: "Price Detective product collection screen", sortOrder: 2 },
+        { projectId: priceDetective.id, url: "/apps/price-detective/shopping-tracker.png", altTr: "Fiyat Dedektifi alışveriş takibi ekranı", altEn: "Price Detective shopping tracker screen", sortOrder: 3 },
+        { projectId: priceDetective.id, url: "/apps/price-detective/icon.png", altTr: "Fiyat Dedektifi uygulama ikonu", altEn: "Price Detective app icon", sortOrder: 4 }
       ]
     });
   }
