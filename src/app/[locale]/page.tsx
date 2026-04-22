@@ -48,7 +48,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
         <div className="relative min-h-[560px] overflow-hidden rounded-lg bg-slate-950 p-6 text-white shadow-2xl">
           {featuredProject?.coverImageUrl ? (
-            <Image src={featuredProject.coverImageUrl} alt={projectName(featuredProject, locale)} fill priority sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover opacity-60" />
+            <Image src={featuredProject.coverImageUrl} alt={projectName(featuredProject, locale)} fill priority sizes="(min-width: 1024px) 45vw, 100vw" quality={95} className="object-contain opacity-80" />
           ) : null}
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.18),rgba(15,23,42,0.92))]" />
           <div className="relative z-10 flex min-h-[512px] flex-col justify-between">

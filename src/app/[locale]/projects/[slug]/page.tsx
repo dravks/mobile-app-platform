@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { isLocale, t } from "@/i18n";
+import { ProjectGallery } from "@/components/public/project-gallery";
 import { absoluteUrl, projectFull, projectName, projectShort } from "@/lib/content";
 import { getProjectBySlug } from "@/lib/public-projects";
 
@@ -58,10 +59,18 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             {project.websiteUrl ? <Link className="btn btn-secondary" href={project.websiteUrl}>Website</Link> : null}
           </div>
         </div>
-        <div className="surface overflow-hidden rounded-lg">
+        <div className="surface overflow-hidden rounded-lg bg-slate-100">
           {project.coverImageUrl ? (
-            <div className="relative h-[420px]">
-              <Image src={project.coverImageUrl} alt={projectName(project, locale)} fill sizes="(min-width: 1024px) 50vw, 100vw" priority className="object-cover" />
+            <div className="relative h-[520px] p-4 sm:h-[620px] lg:h-[560px]">
+              <Image
+                src={project.coverImageUrl}
+                alt={projectName(project, locale)}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                quality={95}
+                priority
+                className="object-contain"
+              />
             </div>
           ) : (
             <div className="grid h-[420px] place-items-center bg-slate-100 text-4xl font-black">{projectName(project, locale)}</div>
@@ -89,18 +98,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         </aside>
       </section>
 
-      {project.images.length ? (
-        <section className="container py-8">
-          <h2 className="mb-5 text-3xl font-black">{dict.project.gallery}</h2>
-          <div className="grid gap-4 md:grid-cols-3">
-            {project.images.map((image) => (
-              <div key={image.id} className="relative h-56 overflow-hidden rounded-lg shadow-sm">
-                <Image src={image.url} alt={locale === "tr" ? image.altTr : image.altEn} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
-              </div>
-            ))}
-          </div>
-        </section>
-      ) : null}
+      {project.images.length ? <ProjectGallery images={project.images} locale={locale} title={dict.project.gallery} /> : null}
 
       {project.faqEnabled && project.faqs.length ? (
         <section className="container py-8">
